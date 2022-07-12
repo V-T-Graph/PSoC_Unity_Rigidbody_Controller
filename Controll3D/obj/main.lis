@@ -1,0 +1,361 @@
+                        .module main.c
+                        .area text(rom, con, rel)
+ 0000                   .dbfile ./main.c
+ 0000                   .dbfile C:\MEIJI_~1\CONTRO~1\CONTRO~1\main.c
+ 0000                   .dbfunc e putData _putData fV
+ 0000           ;        pszData -> X+0
+ 0000           ;       iResult3 -> X-9
+ 0000           ;       iResult2 -> X-7
+ 0000           ;       iResult1 -> X-5
+ 0000           _putData::
+ 0000                   .dbline -1
+ 0000 10                push X
+ 0001 4F                mov X,SP
+ 0002 3807              add SP,7
+ 0004                   .dbline 7
+ 0004           ; #include <m8c.h>
+ 0004           ; #include "PSoCAPI.h"
+ 0004           ; #include <stdlib.h>
+ 0004           ; 
+ 0004           ; 
+ 0004           ; void putData(int iResult1, int iResult2, int iResult3)
+ 0004           ; {
+ 0004                   .dbline 10
+ 0004           ; char pszData[7];
+ 0004           ;   
+ 0004           ;   LCD_Position(0, 0);
+ 0004 10                push X
+ 0005 5000              mov A,0
+ 0007 5700              mov X,0
+ 0009 7C0000            xcall _LCD_Position
+ 000C                   .dbline 11
+ 000C           ;   LCD_PrCString("X:");
+ 000C 500B              mov A,>L2
+ 000E 08                push A
+ 000F 500B              mov A,<L2
+ 0011 5C                mov X,A
+ 0012 18                pop A
+ 0013 7C0000            xcall _LCD_PrCString
+ 0016 20                pop X
+ 0017                   .dbline 12
+ 0017           ;   itoa(pszData, iResult1 / 10, 10);
+ 0017 5000              mov A,0
+ 0019 08                push A
+ 001A 500A              mov A,10
+ 001C 08                push A
+ 001D 5000              mov A,0
+ 001F 08                push A
+ 0020 500A              mov A,10
+ 0022 08                push A
+ 0023 52FB              mov A,[X-5]
+ 0025 08                push A
+ 0026 52FC              mov A,[X-4]
+ 0028 08                push A
+ 0029 7C0000            xcall __divmod_16X16_16
+ 002C 18                pop A
+ 002D 5300              mov [__r1],A
+ 002F 18                pop A
+ 0030 5300              mov [__r0],A
+ 0032 38FE              add SP,-2
+ 0034 08                push A
+ 0035 5100              mov A,[__r1]
+ 0037 08                push A
+ 0038 5100              mov A,[__r0]
+ 003A 08                push A
+ 003B 10                push X
+ 003C 7C0000            xcall _itoa
+ 003F 38FA              add SP,-6
+ 0041                   .dbline 13
+ 0041           ;   LCD_PrString(pszData);
+ 0041 10                push X
+ 0042 5100              mov A,[__r0]
+ 0044 7C0000            xcall _LCD_PrString
+ 0047 20                pop X
+ 0048                   .dbline 15
+ 0048           ;   
+ 0048           ;   UART_PutString(pszData);
+ 0048 10                push X
+ 0049 5100              mov A,[__r0]
+ 004B 7C0000            xcall _UART_PutString
+ 004E                   .dbline 16
+ 004E           ;   UART_CPutString(",");
+ 004E 5009              mov A,>L3
+ 0050 08                push A
+ 0051 5009              mov A,<L3
+ 0053 5C                mov X,A
+ 0054 18                pop A
+ 0055 7C0000            xcall _UART_CPutString
+ 0058                   .dbline 18
+ 0058           ;   
+ 0058           ;   LCD_PrCString("Z:");
+ 0058 5006              mov A,>L4
+ 005A 08                push A
+ 005B 5006              mov A,<L4
+ 005D 5C                mov X,A
+ 005E 18                pop A
+ 005F 7C0000            xcall _LCD_PrCString
+ 0062 20                pop X
+ 0063                   .dbline 19
+ 0063           ;   itoa(pszData, iResult2 / 10, 10);
+ 0063 5000              mov A,0
+ 0065 08                push A
+ 0066 500A              mov A,10
+ 0068 08                push A
+ 0069 5000              mov A,0
+ 006B 08                push A
+ 006C 500A              mov A,10
+ 006E 08                push A
+ 006F 52F9              mov A,[X-7]
+ 0071 08                push A
+ 0072 52FA              mov A,[X-6]
+ 0074 08                push A
+ 0075 7C0000            xcall __divmod_16X16_16
+ 0078 18                pop A
+ 0079 5300              mov [__r1],A
+ 007B 18                pop A
+ 007C 5300              mov [__r0],A
+ 007E 38FE              add SP,-2
+ 0080 08                push A
+ 0081 5100              mov A,[__r1]
+ 0083 08                push A
+ 0084 5100              mov A,[__r0]
+ 0086 08                push A
+ 0087 10                push X
+ 0088 7C0000            xcall _itoa
+ 008B 38FA              add SP,-6
+ 008D                   .dbline 20
+ 008D           ;   LCD_PrString(pszData);
+ 008D 10                push X
+ 008E 5100              mov A,[__r0]
+ 0090 7C0000            xcall _LCD_PrString
+ 0093 20                pop X
+ 0094                   .dbline 22
+ 0094           ;   
+ 0094           ;   UART_PutString(pszData);
+ 0094 10                push X
+ 0095 5100              mov A,[__r0]
+ 0097 7C0000            xcall _UART_PutString
+ 009A                   .dbline 23
+ 009A           ;   UART_CPutString(",");
+ 009A 5009              mov A,>L3
+ 009C 08                push A
+ 009D 5009              mov A,<L3
+ 009F 5C                mov X,A
+ 00A0 18                pop A
+ 00A1 7C0000            xcall _UART_CPutString
+ 00A4                   .dbline 25
+ 00A4           ;   
+ 00A4           ;   LCD_Position(1, 0);
+ 00A4 5700              mov X,0
+ 00A6 5001              mov A,1
+ 00A8 7C0000            xcall _LCD_Position
+ 00AB                   .dbline 26
+ 00AB           ;   LCD_PrCString("Y:");
+ 00AB 5003              mov A,>L5
+ 00AD 08                push A
+ 00AE 5003              mov A,<L5
+ 00B0 5C                mov X,A
+ 00B1 18                pop A
+ 00B2 7C0000            xcall _LCD_PrCString
+ 00B5 20                pop X
+ 00B6                   .dbline 27
+ 00B6           ;   itoa(pszData, iResult3 / 10, 10);
+ 00B6 5000              mov A,0
+ 00B8 08                push A
+ 00B9 500A              mov A,10
+ 00BB 08                push A
+ 00BC 5000              mov A,0
+ 00BE 08                push A
+ 00BF 500A              mov A,10
+ 00C1 08                push A
+ 00C2 52F7              mov A,[X-9]
+ 00C4 08                push A
+ 00C5 52F8              mov A,[X-8]
+ 00C7 08                push A
+ 00C8 7C0000            xcall __divmod_16X16_16
+ 00CB 18                pop A
+ 00CC 5300              mov [__r1],A
+ 00CE 18                pop A
+ 00CF 5300              mov [__r0],A
+ 00D1 38FE              add SP,-2
+ 00D3 08                push A
+ 00D4 5100              mov A,[__r1]
+ 00D6 08                push A
+ 00D7 5100              mov A,[__r0]
+ 00D9 08                push A
+ 00DA 10                push X
+ 00DB 7C0000            xcall _itoa
+ 00DE 38FA              add SP,-6
+ 00E0                   .dbline 28
+ 00E0           ;   LCD_PrString(pszData);
+ 00E0 10                push X
+ 00E1 5100              mov A,[__r0]
+ 00E3 7C0000            xcall _LCD_PrString
+ 00E6 20                pop X
+ 00E7                   .dbline 30
+ 00E7           ;   
+ 00E7           ;   UART_PutString(pszData);
+ 00E7 10                push X
+ 00E8 5100              mov A,[__r0]
+ 00EA 7C0000            xcall _UART_PutString
+ 00ED                   .dbline 31
+ 00ED           ;   UART_CPutString("\r\n");
+ 00ED 5000              mov A,>L6
+ 00EF 08                push A
+ 00F0 5000              mov A,<L6
+ 00F2 5C                mov X,A
+ 00F3 18                pop A
+ 00F4 7C0000            xcall _UART_CPutString
+ 00F7 20                pop X
+ 00F8                   .dbline -2
+ 00F8           L1:
+ 00F8 38F9              add SP,-7
+ 00FA 20                pop X
+ 00FB                   .dbline 0 ; func end
+ 00FB 7F                ret
+ 00FC                   .dbsym l pszData 0 A[7:7]c
+ 00FC                   .dbsym l iResult3 -9 I
+ 00FC                   .dbsym l iResult2 -7 I
+ 00FC                   .dbsym l iResult1 -5 I
+ 00FC                   .dbend
+ 00FC                   .dbfunc e main _main fV
+ 00FC           _main::
+ 00FC                   .dbline -1
+ 00FC 10                push X
+ 00FD 4F                mov X,SP
+ 00FE 3804              add SP,4
+ 0100                   .dbline 35
+ 0100           ; }
+ 0100           ; 
+ 0100           ; void main(void)
+ 0100           ; {
+ 0100                   .dbline 36
+ 0100           ; M8C_EnableGInt;
+ 0100 7101                      or  F, 01h
+ 0102           
+ 0102                   .dbline 38
+ 0102           ;   
+ 0102           ;   UART_CmdReset();
+ 0102 10                push X
+ 0103 7C0000            xcall _UART_CmdReset
+ 0106                   .dbline 39
+ 0106           ;   UART_IntCntl(UART_ENABLE_RX_INT);
+ 0106 5001              mov A,1
+ 0108 7C0000            xcall _UART_IntCntl
+ 010B                   .dbline 40
+ 010B           ;   Counter8_WritePeriod(155);
+ 010B 509B              mov A,-101
+ 010D 7C0000            xcall _Counter8_WritePeriod
+ 0110                   .dbline 41
+ 0110           ;   Counter8_WriteCompareValue(77);
+ 0110 504D              mov A,77
+ 0112 7C0000            xcall _Counter8_WriteCompareValue
+ 0115                   .dbline 42
+ 0115           ;   Counter8_Start();
+ 0115 7C0000            xcall _Counter8_Start
+ 0118                   .dbline 43
+ 0118           ;   UART_Start(UART_PARITY_NONE);
+ 0118 5000              mov A,0
+ 011A 7C0000            xcall _UART_Start
+ 011D                   .dbline 45
+ 011D           ;   
+ 011D           ;   LCD_Start();
+ 011D 7C0000            xcall _LCD_Start
+ 0120                   .dbline 46
+ 0120           ;   PGA_1_Start(PGA_1_MEDPOWER);
+ 0120 5002              mov A,2
+ 0122 7C0000            xcall _PGA_1_Start
+ 0125                   .dbline 47
+ 0125           ;   PGA_2_Start(PGA_2_MEDPOWER);
+ 0125 5002              mov A,2
+ 0127 7C0000            xcall _PGA_2_Start
+ 012A                   .dbline 48
+ 012A           ;   PGA_3_Start(PGA_3_MEDPOWER);
+ 012A 5002              mov A,2
+ 012C 7C0000            xcall _PGA_3_Start
+ 012F                   .dbline 50
+ 012F           ;   
+ 012F           ;   TRIADC_Start(TRIADC_HIGHPOWER);
+ 012F 5003              mov A,3
+ 0131 7C0000            xcall _TRIADC_Start
+ 0134                   .dbline 51
+ 0134           ;   TRIADC_SetResolution(12);
+ 0134 500C              mov A,12
+ 0136 7C0000            xcall _TRIADC_SetResolution
+ 0139                   .dbline 52
+ 0139           ;   TRIADC_GetSamples(0);
+ 0139 5000              mov A,0
+ 013B 7C0000            xcall _TRIADC_GetSamples
+ 013E 20                pop X
+ 013F 8043              xjmp L9
+ 0141           L11:
+ 0141                   .dbline 55
+ 0141           ;   
+ 0141           ;   while (1) {
+ 0141           ;       while (TRIADC_fIsDataAvailable() == 0);
+ 0141           L12:
+ 0141                   .dbline 55
+ 0141 10                push X
+ 0142 7C0000            xcall _TRIADC_fIsDataAvailable
+ 0145 20                pop X
+ 0146 3900              cmp A,0
+ 0148 AFF8              jz L11
+ 014A                   .dbline 56
+ 014A           ;       putData(TRIADC_iGetData1(), TRIADC_iGetData2(), TRIADC_iGetData3());
+ 014A 10                push X
+ 014B 7C0000            xcall _TRIADC_iGetData1
+ 014E 5A00              mov [__r0],X
+ 0150 20                pop X
+ 0151 5401              mov [X+1],A
+ 0153 5100              mov A,[__r0]
+ 0155 5400              mov [X+0],A
+ 0157 10                push X
+ 0158 7C0000            xcall _TRIADC_iGetData2
+ 015B 5A00              mov [__r0],X
+ 015D 20                pop X
+ 015E 5403              mov [X+3],A
+ 0160 5100              mov A,[__r0]
+ 0162 5402              mov [X+2],A
+ 0164 10                push X
+ 0165 7C0000            xcall _TRIADC_iGetData3
+ 0168 5A00              mov [__r0],X
+ 016A 5300              mov [__r1],A
+ 016C 20                pop X
+ 016D 5100              mov A,[__r0]
+ 016F 08                push A
+ 0170 5100              mov A,[__r1]
+ 0172 08                push A
+ 0173 5202              mov A,[X+2]
+ 0175 08                push A
+ 0176 5203              mov A,[X+3]
+ 0178 08                push A
+ 0179 5200              mov A,[X+0]
+ 017B 08                push A
+ 017C 5201              mov A,[X+1]
+ 017E 08                push A
+ 017F 9E7F              xcall _putData
+ 0181 38FA              add SP,-6
+ 0183                   .dbline 57
+ 0183           ;   }
+ 0183           L9:
+ 0183                   .dbline 54
+ 0183 8FBD              xjmp L12
+ 0185           X0:
+ 0185                   .dbline -2
+ 0185           L7:
+ 0185 38FC              add SP,-4
+ 0187 20                pop X
+ 0188                   .dbline 0 ; func end
+ 0188 8FFF              jmp .
+ 018A                   .dbend
+                        .area lit(rom, con, rel, lit)
+ 0000           L6:
+ 0000 0D0A00            .byte 13,10,0
+ 0003           L5:
+ 0003 593A00            .byte 'Y,58,0
+ 0006           L4:
+ 0006 5A3A00            .byte 'Z,58,0
+ 0009           L3:
+ 0009 2C00              .byte 44,0
+ 000B           L2:
+ 000B 583A00            .byte 'X,58,0

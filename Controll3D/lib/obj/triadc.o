@@ -1,0 +1,250 @@
+XH
+H 2 areas 3A global symbols
+M triadc.asm
+S TRIADC_iResult1 Ref0000
+S TRIADC_iResult2 Ref0000
+S TRIADC_iResult3 Ref0000
+S TRIADC_bSampC Ref0000
+S TRIADC_bfStatus Ref0000
+S TRIADC_cCounter1U Ref0000
+S TRIADC_cCounter2U Ref0000
+S TRIADC_cCounter3U Ref0000
+A text size 0 flags 0
+dbfile lib/triadc.asm
+dbfunc 0 ? 0 I
+dbfile memory.inc
+dbfunc 0 ? 0 I
+dbfile lib/triadc.asm
+dbfunc 0 ? 0 I
+dbfile C:/PROGRA~2/Cypress/PSOCDE~1/5.3/Common/CY110F~1/tools/include/CY8C27~1/m8c.inc
+dbfunc 0 ? 0 I
+dbfile lib/triadc.asm
+dbfunc 0 ? 0 I
+dbfile ./lib/TRIADC.inc
+dbfunc 0 ? 0 I
+A UserModules size 116 flags 0
+dbfile lib/triadc.asm
+dbfunc 0 ? 0 I
+dbline 67 0
+dbline 68 2
+dbline 69 3
+dbline 6C 4
+dbline 6D 6
+dbline 6E 8
+dbline 6F A
+dbline 70 C
+dbline 73 E
+dbline 74 10
+dbline 75 12
+dbline 76 14
+dbline 77 16
+dbline 7A 18
+dbline 7B 1A
+dbline 7C 1C
+dbline 7D 1E
+dbline 7E 20
+dbline 80 22
+dbline 81 25
+dbline 82 27
+dbline 83 29
+dbline 86 2B
+dbline 89 2C
+dbline A4 2D
+dbline A5 30
+dbline A6 33
+dbline A8 36
+dbline C8 37
+dbline CA 39
+dbline CB 3B
+dbline CC 3D
+dbline CD 3F
+dbline D3 41
+dbline D4 43
+dbline D5 45
+dbline D6 47
+dbline D7 49
+dbline DD 4A
+dbline DE 4D
+dbline DF 50
+dbline E1 53
+dbline E2 55
+dbline E3 58
+dbline E4 5B
+dbline E6 5E
+dbline E7 61
+dbline E8 64
+dbline EA 67
+dbline EB 6A
+dbline EC 6D
+dbline F0 70
+dbline F1 73
+dbline F2 76
+dbline F3 79
+dbline F4 7C
+dbline F5 7F
+dbline F6 82
+dbline F7 85
+dbline F9 88
+dbline 114 89
+dbline 116 8C
+dbline 117 8F
+dbline 118 92
+dbline 11B 95
+dbline 11C 98
+dbline 11D 9B
+dbline 120 9E
+dbline 121 A1
+dbline 122 A4
+dbline 124 A7
+dbline 2 A8
+dbline 2 AB
+dbline 2 AE
+dbline 2 B1
+dbline 129 B4
+dbline 12B B5
+dbline 14E B6
+dbline 14F B8
+dbline 151 BA
+dbline 171 BB
+dbline 172 BE
+dbline 173 C0
+dbline 175 C2
+dbline 17B C3
+dbline 17C C5
+dbline 17E C7
+dbline 19E C8
+dbline 19F CB
+dbline 1A0 CD
+dbline 1A2 CF
+dbline 1A8 D0
+dbline 1A9 D2
+dbline 1AB D4
+dbline 1CB D5
+dbline 1CC D8
+dbline 1CD DA
+dbline 1CF DC
+dbline 1D5 DD
+dbline 1D6 DF
+dbline 1D8 E1
+dbline 1F6 E2
+dbline 1F8 E5
+dbline 21C E6
+dbline 21E E9
+dbline 21F EB
+dbline 222 EE
+dbline 223 F0
+dbline 224 F2
+dbline 225 F4
+dbline 228 F6
+dbline 229 F8
+dbline 22A FA
+dbline 22F FC
+dbline 230 FE
+dbline 233 100
+dbline 234 102
+dbline 235 103
+dbline 238 105
+dbline 239 106
+dbline 23A 107
+dbline 23E 109
+dbline 23F 10C
+dbline 242 10E
+dbline 243 111
+dbline 244 113
+dbline 246 115
+S _TRIADC_iGetData1ClearFlag Def00BB
+S _TRIADC_iGetData2ClearFlag Def00C8
+S TRIADC_GetSamples Def0037
+S _TRIADC_iGetData3ClearFlag Def00D5
+S _TRIADC_fIsData Def00B6
+S _TRIADC_Stop Def002D
+S TRIADC_Start Def0000
+S $sb$TRIADC_GetSamples Def0037
+S $se$TRIADC_GetSamples Def0089
+S TRIADC_fIsDataAvailable Def00B6
+S $sb$TRIADC_Start Def0000
+S TRIADC_StopAD Def0089
+S $se$TRIADC_Start Def002D
+S TRIADC_iGetData1 Def00C3
+S TRIADC_iGetData2 Def00D0
+S TRIADC_iGetData3 Def00DD
+S TRIADC_SetPower Def0000
+S $sb$TRIADC_StopAD Def0089
+S $se$TRIADC_StopAD Def00B6
+S _TRIADC_GetSamples Def0037
+S TRIADC_SetResolution Def00E6
+S TRIADC_ClearFlag Def00E2
+S _TRIADC_Start Def0000
+S _TRIADC_fIsDataAvailable Def00B6
+S $sb$TRIADC_SetResolution Def00E6
+S $sb$TRIADC_ClearFlag Def00E2
+S $se$TRIADC_SetResolution Def0116
+S $se$TRIADC_ClearFlag Def00E6
+S _TRIADC_StopAD Def0089
+S _TRIADC_iGetData1 Def00C3
+S _TRIADC_iGetData2 Def00D0
+S TRIADC_iGetData1ClearFlag Def00BB
+S _TRIADC_iGetData3 Def00DD
+S TRIADC_iGetData2ClearFlag Def00C8
+S TRIADC_iGetData3ClearFlag Def00D5
+S _TRIADC_SetPower Def0000
+S TRIADC_fIsData Def00B6
+S TRIADC_Stop Def002D
+S $sb$TRIADC_iGetData1ClearFlag Def00BB
+S $sb$TRIADC_iGetData2ClearFlag Def00C8
+S $sb$TRIADC_iGetData3ClearFlag Def00D5
+S $se$TRIADC_iGetData1ClearFlag Def00C8
+S $se$TRIADC_iGetData2ClearFlag Def00D5
+S $se$TRIADC_iGetData3ClearFlag Def00E2
+S $sb$TRIADC_fIsData Def00B6
+S $se$TRIADC_fIsData Def00BB
+S _TRIADC_SetResolution Def00E6
+S _TRIADC_ClearFlag Def00E2
+S $sb$TRIADC_Stop Def002D
+S $se$TRIADC_Stop Def0037
+T 00 00 21 03 4F 08 5D 83 21 FC 2B 00 29 F0 60 83
+R 00 00 00 01
+T 00 0E 5D 87 21 FC 2B 00 29 F0 60 87 5D 8B 21 FC
+R 00 00 00 01
+T 00 1C 2B 00 29 F0 60 8B 49 82 01 A0 05 50 03 53
+R 00 00 00 01
+T 00 2A 00 00 18 7F 41 83 FC 41 87 FC 41 8B FC 7F
+R 00 00 00 01 03 02 00 04
+T 00 37 53 00 00 51 00 00 21 0F 01 07 90 A5 5D 2A
+R 00 00 00 01 03 03 00 03 03 06 00 04
+T 00 43 53 00 00 50 00 12 00 00 67 55 00 00 00 55
+R 00 00 00 01 03 03 00 05 03 08 00 05 03 0C 00 05
+T 00 4E 00 00 00 55 00 00 00 5D 26 62 21 FF 62 2D
+R 00 00 00 01 03 02 00 06 03 06 00 07
+T 00 5A FF 62 31 FF 41 83 EF 41 87 EF 41 8B EF 41
+R 00 00 00 01
+T 00 68 82 DF 41 86 DF 41 8A DF 43 23 05 43 2F 05
+R 00 00 00 01
+T 00 76 43 33 05 43 27 01 43 E1 04 43 E1 01 43 E1
+R 00 00 00 01
+T 00 84 08 43 E1 10 7F 41 27 FE 41 23 FE 41 2F FE
+R 00 00 00 01
+T 00 92 41 33 FE 43 82 20 43 86 20 43 8A 20 43 83
+R 00 00 00 01
+T 00 A0 10 43 87 10 43 8B 10 08 41 E1 FB 41 E1 FE
+R 00 00 00 01
+T 00 AE 41 E1 F7 41 E1 EF 18 7F 51 00 00 21 10 7F
+R 00 00 00 01 03 0B 00 04
+T 00 BB 26 00 00 EF 58 00 00 51 00 01 7F 58
+R 00 00 00 01 03 03 00 04 03 07 00 00 03 0A 00 00
+T 00 C4 00 00 51 00 01 7F 26 00 00 EF 58
+R 00 00 00 01 03 02 00 00 03 05 00 00 03 09 00 04
+T 00 CC 00 00 51 00 01 7F 58 00 00 51
+R 00 00 00 01 03 02 00 01 03 05 00 01 03 09 00 01
+T 00 D3 00 01 7F 26 00 00 EF 58 00 00 51
+R 00 00 00 01 03 02 00 01 03 06 00 04 03 0A 00 02
+T 00 DB 00 01 7F 58 00 00 51 00 01 7F 26
+R 00 00 00 01 03 02 00 02 03 06 00 02 03 09 00 02
+T 00 E3 00 00 EF 7F 41 82 FE 9F 9E 55 00 00 00 39
+R 00 00 00 01 03 02 00 04 03 0C 00 04
+T 00 EF 07 D0 05 50 07 80 07 39 0D C0 03 50 0D 11
+R 00 00 00 01
+T 00 FD 07 2C 00 00 01 01 5C 50 01 64 79 BF FD 62
+R 00 00 00 01 03 04 00 04
+T 01 0A 26 00 60 2A 62 25 01 01 00 60 29 7F
+R 00 00 00 01

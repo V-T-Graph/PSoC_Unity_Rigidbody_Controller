@@ -1,0 +1,9 @@
+Starting MAKE...
+creating project.mk -- no changes
+Linking..
+  ROM 21% full. 3440 out of 16384 bytes used (does not include absolute areas).
+  RAM 16% full. 39 bytes used (does not include stack usage).
+Built with ICCM8C STD V7.05.00
+ 
+Controll3D - 0 error(s) 0 warning(s) 15:19:29
+

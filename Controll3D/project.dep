@@ -1,0 +1,51 @@
+# DO NOT DELETE
+./obj/boot.o : \
+   C:/PROGRA~2/Cypress/PSOCDE~1/5.3/Common/CY110F~1/tools/include/CY8C27~1/m8c.inc\
+   C:/PROGRA~2/Cypress/PSOCDE~1/5.3/Common/CY110F~1/tools/include/CY8C27~1/m8ssc.inc\
+   C:\MEIJI_~1\CONTRO~1\CONTRO~1\lib\GLOBAL~1.INC\
+   C:\MEIJI_~1\CONTRO~1\CONTRO~1\memory.inc
+./obj/main.o :  ./lib/Counter8.h ./lib/LCD.h ./lib/PGA_1.h\
+   ./lib/PGA_2.h ./lib/PGA_3.h ./lib/PSoCAPI.h ./lib/PSOCGP~1.H\
+   ./lib/TRIADC.h ./lib/UART.h\
+   C:/PROGRA~2/Cypress/PSOCDE~1/5.3/Common/CY110F~1/tools/include/CY8C27~1/M8C.h\
+   C:/PROGRA~2/Cypress/PSOCDE~1/5.3/Common/CY110F~1/tools/include/CY8C27~1/m8C.h\
+   C:/PROGRA~2/Cypress/PSOCDE~1/5.3/Common/CY110F~1/tools/include/CY8C27~1/m8c.h\
+   C:/PROGRA~2/Cypress/PSOCDE~1/5.3/Common/CY110F~1/tools/include/_const.h\
+   C:/PROGRA~2/Cypress/PSOCDE~1/5.3/Common/CY110F~1/tools/include/limits.h\
+   C:/PROGRA~2/Cypress/PSOCDE~1/5.3/Common/CY110F~1/tools/include/stdlib.h
+./lib/obj/counter8.o :  ./lib/Counter8.inc\
+   C:/PROGRA~2/Cypress/PSOCDE~1/5.3/Common/CY110F~1/tools/include/CY8C27~1/m8c.inc\
+   C:\MEIJI_~1\CONTRO~1\CONTRO~1\memory.inc
+./lib/obj/counter8int.o :  ./lib/Counter8.inc\
+   C:/PROGRA~2/Cypress/PSOCDE~1/5.3/Common/CY110F~1/tools/include/CY8C27~1/m8c.inc\
+   C:\MEIJI_~1\CONTRO~1\CONTRO~1\memory.inc
+./lib/obj/lcd.o :  ./lib/LCD.inc\
+   C:/PROGRA~2/Cypress/PSOCDE~1/5.3/Common/CY110F~1/tools/include/CY8C27~1/m8c.inc\
+   C:\MEIJI_~1\CONTRO~1\CONTRO~1\memory.inc
+./lib/obj/pga_1.o :  ./lib/PGA_1.inc\
+   C:/PROGRA~2/Cypress/PSOCDE~1/5.3/Common/CY110F~1/tools/include/CY8C27~1/m8c.inc\
+   C:\MEIJI_~1\CONTRO~1\CONTRO~1\memory.inc
+./lib/obj/pga_2.o :  ./lib/PGA_2.inc\
+   C:/PROGRA~2/Cypress/PSOCDE~1/5.3/Common/CY110F~1/tools/include/CY8C27~1/m8c.inc\
+   C:\MEIJI_~1\CONTRO~1\CONTRO~1\memory.inc
+./lib/obj/pga_3.o :  ./lib/PGA_3.inc\
+   C:/PROGRA~2/Cypress/PSOCDE~1/5.3/Common/CY110F~1/tools/include/CY8C27~1/m8c.inc\
+   C:\MEIJI_~1\CONTRO~1\CONTRO~1\memory.inc
+./lib/obj/psocconfig.o :  ./lib/GLOBAL~1.INC\
+   C:/PROGRA~2/Cypress/PSOCDE~1/5.3/Common/CY110F~1/tools/include/CY8C27~1/m8c.inc\
+   C:\MEIJI_~1\CONTRO~1\CONTRO~1\memory.inc
+./lib/obj/psocconfigtbl.o : \
+   C:/PROGRA~2/Cypress/PSOCDE~1/5.3/Common/CY110F~1/tools/include/CY8C27~1/m8c.inc
+./lib/obj/triadc.o :  ./lib/TRIADC.inc\
+   C:/PROGRA~2/Cypress/PSOCDE~1/5.3/Common/CY110F~1/tools/include/CY8C27~1/m8c.inc\
+   C:\MEIJI_~1\CONTRO~1\CONTRO~1\memory.inc
+./lib/obj/triadcint.o :  ./lib/TRIADC.inc\
+   C:/PROGRA~2/Cypress/PSOCDE~1/5.3/Common/CY110F~1/tools/include/CY8C27~1/m8c.inc\
+   C:\MEIJI_~1\CONTRO~1\CONTRO~1\memory.inc
+./lib/obj/uart.o :  ./lib/UART.inc\
+   C:/PROGRA~2/Cypress/PSOCDE~1/5.3/Common/CY110F~1/tools/include/CY8C27~1/m8c.inc\
+   C:\MEIJI_~1\CONTRO~1\CONTRO~1\memory.inc
+./lib/obj/uartint.o :  ./lib/UART.inc\
+   C:/PROGRA~2/Cypress/PSOCDE~1/5.3/Common/CY110F~1/tools/include/CY8C27~1/m8c.inc\
+   C:\MEIJI_~1\CONTRO~1\CONTRO~1\memory.inc
+./lib/obj/uartplus.o : 
